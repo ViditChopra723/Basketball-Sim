@@ -25,7 +25,7 @@ public:
 	~Player();
 
 private:
-	bio thisPlayer;
+	bio thisPlayer;					//to do
 	//bio
 	//stats
 	//ability
