@@ -1,6 +1,12 @@
 #ifndef PLAYERBIO_H
 #define PLAYERBIO_H
 
+/*
+seems to not be printing internals right and the name
+make the id work
+
+*/
+
 struct internals {
 public:
 	internals(int hgt = -1 , int wgt = -1, int playerAge = -1 , int years = -1) {
