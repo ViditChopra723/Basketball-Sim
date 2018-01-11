@@ -17,15 +17,6 @@ using namespace std;
 
 
 class Player {
-public:
-	Player(char fname, char lname, int num, int hgt, int wgt, int playerAge, int years, char cllge);
-	void print() {
-		thisPlayer.printBio();
-	}
-	~Player();
-
-private:
-	bio thisPlayer;
 	//bio
 	//stats
 	//ability
