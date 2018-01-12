@@ -16,7 +16,8 @@ void bio::set_number(int num) {
 	number = num;
 }
 
-void bio::set_ID(char fname, char lname, int number) {
+void bio::set_ID(const char * fname,const char * lname, int number) {
+
 	// put together first three fname, first three lname, and number to make id				TO DO
 }
 
@@ -44,7 +45,7 @@ const char * bio::get_college() {
 	return college;
 }
 
-void bio::print_bio() {														//TO DO
+void bio::print_bio() {														
 	std::cout << "--------------------------------------------------------------------------------------" << endl;
 	std::cout << "              " << get_first_name() << " " << get_last_name() << " #" << get_number() << endl << "      " << endl;
 	std::cout << "  Height: " << get_internals()->get_height() << " Weight: " << get_internals()->get_weight() << " Age: " << get_internals()->get_age() << " Years Pro: " << get_internals()->get_pro() << " College " << get_college() << " " << endl;

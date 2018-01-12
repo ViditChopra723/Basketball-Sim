@@ -3,13 +3,28 @@
 
 /*
 
-make the id work
+Player Bio displays the player's health information.
+
+Internals - basic health infomation
+	height
+	weight
+	age
+	years pro
+
+Bio - Trivia Info about Player
+	Internals
+	Name Number 
+	ID			//to do
+	Injury Status			//to do
+	College
+
+sub member of the player class
 
 */
 
-class internals {
+class internals {																								//internals keeps track of players height weight age and other basic information
 public:
-	internals(int hgt = -1, int wgt = -1, int player_age = -1, int years = -1)
+	internals(int hgt = -1, int wgt = -1, int player_age = -1, int years = -1)	
 	{
 		height = hgt;
 		weight = wgt;
@@ -34,7 +49,7 @@ private:
 	int years_pro;
 };
 
-class bio {
+class bio {												//Player's Health Information
 public:
 
 	bio(const char * fname = "NULL", const char * lname = "NULL", unsigned const int num = -1, unsigned const int hgt = -1, unsigned const int wgt = -1, unsigned const int player_age = -1, unsigned const int years = -1, const char * cllge = "NULL") :
@@ -50,7 +65,7 @@ public:
 	void set_first_name(const char * fname);
 	void set_last_name(const char * lname);
 	void set_number(int num);
-	void set_ID(char fname, char lname, int number);
+	void set_ID(const char * fname, const char * lname, int number);
 	void set_internals(int hgt, int wgt, int player_age, int years) {
 		player->set_height(hgt);
 		player->set_weight(wgt);

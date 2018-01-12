@@ -4,6 +4,43 @@ holds a player object
 Players play on teams
 Provides stats, abilities, and offense/defense numbers for a player. 
 
+Player:
+	bio
+		internals
+		name number
+		health status
+		college
+
+	stats    ----> saved in file after every game
+		PTS
+		AST
+		REB
+		STLS
+		BLK
+		TOV
+		FG%
+		3PT%
+	
+	ability			//players special ability (boosts, powers)
+		trigger			//when to use power
+		energy			//energy required to use power
+
+	off
+		scoring (50 -100)
+		assisting (50 - 100)
+		dribbling (50 -100)
+		off reb (50 - 100)
+		athletics (50 -100)
+
+	def
+		on ball d (50 -100)
+		off ball d (50 -100)
+		steals (50 -100)
+		blocks (50 -100)
+		def reb (50 -100)
+
+
+
 */
 
 
@@ -25,8 +62,7 @@ public:
 	~Player();
 
 private:
-	bio this_player;					//to do
-	//bio
+	bio this_player;					//Health Info
 	//stats
 	//ability
 	//offense
@@ -35,5 +71,5 @@ private:
 };
 
 
-#endif // !1
+#endif 
 

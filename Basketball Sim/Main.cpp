@@ -4,15 +4,14 @@ Irvine, California
 1/11/2018 9:04 AM
 
 
-
 Welcome to Vidit's Basketball Sim
-input
-1
 --------------------------------------------------------------------------------------
-Vidit Chopra Number: 7 College CSUF
-Height: 70 Weight: 170 Age: 21 Years Pro: 7
+Vidit Chopra #7
+
+Height: 70 Weight: 170 Age: 21 Years Pro: 7 College CSUF
 --------------------------------------------------------------------------------------
 input
+
 
 
 
