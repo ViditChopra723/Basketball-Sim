@@ -9,10 +9,11 @@ Welcome to Vidit's Basketball Sim
 input
 1
 --------------------------------------------------------------------------------------
-NULL NULL Number: -1 College NULL
-Height: -1 Weight: -1 Age: -1 Years Pro: -842150451
+Vidit Chopra Number: 7 College CSUF
+Height: 70 Weight: 170 Age: 21 Years Pro: 7
 --------------------------------------------------------------------------------------
 input
+
 
 
 
@@ -31,14 +32,14 @@ using namespace std;
 int main() {
 	int input = 0;
 	
-	Player temp;
+	Player temp("Vidit", "Chopra", 7, 70, 170, 21, 7, "CSUF");
 
 	cout << "Welcome to Vidit's Basketball Sim " << endl;
-	while (input != -1) {
+	 do {
+		temp.print();
 		cout << "input" << endl;
 		cin >> input;
-		temp.print();
-	}
+	 } while (input != -1);
 
 
 

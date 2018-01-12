@@ -14,9 +14,13 @@ public:
 		height = hgt;
 		weight = wgt;
 		age = player_age;
-		years = years_pro;
+		years_pro = years;
 	}
 	
+	void set_height(int hgt) { height = hgt; }
+	void set_weight(int wgt) { weight = wgt; }
+	void set_age(int p_age) { age = p_age; }
+	void set_years_pro(int pro) { years_pro = pro; }
 	int get_height() { return height; }
 	int get_weight() { return weight; }
 	int get_age() { return age; }
@@ -48,6 +52,10 @@ public:
 	void set_number(int num);
 	void set_ID(char fname, char lname, int number);
 	void set_internals(int hgt, int wgt, int player_age, int years) {
+		player->set_height(hgt);
+		player->set_weight(wgt);
+		player->set_age(player_age);
+		player->set_years_pro(years);
 	}
 	void set_college(const char * cllge);
 

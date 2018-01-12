@@ -46,8 +46,8 @@ const char * bio::get_college() {
 
 void bio::print_bio() {														//TO DO
 	std::cout << "--------------------------------------------------------------------------------------" << endl;
-	std::cout << "              " << get_first_name() << " " << get_last_name() << " Number: " << get_number() << " College " << get_college() << "      " << endl;
-	std::cout << " Height: " << get_internals()->get_height() << " Weight: " << get_internals()->get_weight() << " Age: " << get_internals()->get_age() << " Years Pro: " << get_internals()->get_pro() << " " << endl;
+	std::cout << "              " << get_first_name() << " " << get_last_name() << " #" << get_number() << endl << "      " << endl;
+	std::cout << "  Height: " << get_internals()->get_height() << " Weight: " << get_internals()->get_weight() << " Age: " << get_internals()->get_age() << " Years Pro: " << get_internals()->get_pro() << " College " << get_college() << " " << endl;
 	std::cout << "--------------------------------------------------------------------------------------" << endl;
 }
 
