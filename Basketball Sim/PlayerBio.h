@@ -2,63 +2,76 @@
 #define PLAYERBIO_H
 
 /*
-seems to not be printing internals right and the name
+
 make the id work
 
 */
 
-struct internals {
+class internals {
 public:
-	internals(int hgt = -1 , int wgt = -1, int playerAge = -1 , int years = -1) {
-		height = height;
-		weight = weight;
-		age = playerAge;
-		yearsPro = years;
+	internals(int hgt = -1, int wgt = -1, int player_age = -1, int years = -1)
+	{
+		height = hgt;
+		weight = wgt;
+		age = player_age;
+		years = years_pro;
 	}
+	
+	int get_height() { return height; }
+	int get_weight() { return weight; }
+	int get_age() { return age; }
+	int get_pro() { return years_pro; }
+	
+
+private:
 	int height;
 	int weight;
 	int age;
-	int yearsPro;
-
-private:
-	
+	int years_pro;
 };
 
 class bio {
 public:
-	bio(char fname = 'NULL', char lname = 'NULL', int num = -1, int hgt = -1, int wgt = -1, int playerAge = -1, int years = -1, char cllge = 'NULL');
+
+	bio(const char * fname = "NULL", const char * lname = "NULL", unsigned const int num = -1, unsigned const int hgt = -1, unsigned const int wgt = -1, unsigned const int player_age = -1, unsigned const int years = -1, const char * cllge = "NULL") :
+		first_name(fname),
+		last_name(lname),
+		number(num),
+		college(cllge)
+	{
+		set_internals(hgt, wgt, player_age, years);
+	};
+
 	//setters
-	void setFirstName(char fname);
-	void setLastName(char lname);
-	void SetNumber(int num);
-	void setID(char fname, char lname, int number);
-	void SetInternals(int hgt, int wgt, int playerAge, int years) {
-		internals temp(hgt, wgt, playerAge, years);
-		player = temp;
+	void set_first_name(const char * fname);
+	void set_last_name(const char * lname);
+	void set_number(int num);
+	void set_ID(char fname, char lname, int number);
+	void set_internals(int hgt, int wgt, int player_age, int years) {
 	}
-	void setCollege(char cllge);
+	void set_college(const char * cllge);
 
 	//getters
-	char getFirstName();
-	char getLastName();
-	int getNumber();
-	char getID();
-	internals getInternals();
-	char getCollege();
+	const char * get_first_name();
+	const char * get_last_name();
+	int get_number();
+	const char * get_ID();
+	internals * get_internals();
+	const char * get_college();
  
 	//print bio
-	void printBio();
+	void print_bio();
 	~bio();
 
 private:
-	char FirstName;
-	char LastName;
-	char ID;
+	const char * first_name;
+	const char * last_name;
+	const char * ID;
 	int number;
 	
-	internals player;
+	internals * player = new internals;
 
-	char college;
+	const char * college;
 
 };
 

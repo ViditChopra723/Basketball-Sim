@@ -1,7 +1,19 @@
-/*
+﻿/*
 Vidit Chopra
 Irvine, California
 1/11/2018 9:04 AM
+
+
+
+Welcome to Vidit's Basketball Sim
+input
+1
+-------------------------------------------------------------------------------------------------------------------------------
+╠ ╠ Number: 7 CollegeF
+Height: -858993460 Weight: -858993460 Age: 21 Years Pro: 5
+-------------------------------------------------------------------------------------------------------------------------------
+input
+
 
 
 */
@@ -17,7 +29,8 @@ using namespace std;
 
 int main() {
 	int input = 0;
-	Player temp('Vidi', 'Chop', 7, 170, 70, 21, 5, 'CSUF');
+	
+	Player temp;
 
 	cout << "Welcome to Vidit's Basketball Sim " << endl;
 	while (input != -1) {

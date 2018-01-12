@@ -18,14 +18,14 @@ using namespace std;
 
 class Player {
 public:
-	Player(char fname, char lname, int num, int hgt, int wgt, int playerAge, int years, char cllge);
+	Player(const char * fname = "NULL", const char * lname = "NULL" , int num = -1, int hgt = -1, int wgt = -1, int playerAge = -1, int years = -1, const char * cllge = "NULL");
 	void print() {
-		thisPlayer.printBio();
+		this_player.print_bio();
 	}
 	~Player();
 
 private:
-	bio thisPlayer;					//to do
+	bio this_player;					//to do
 	//bio
 	//stats
 	//ability
