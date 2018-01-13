@@ -1,6 +1,10 @@
 #ifndef PLAYERBIO_H
 #define PLAYERBIO_H
 
+#include <string>
+#include <iostream>
+
+using namespace std;
 /*
 
 Player Bio displays the player's health information.
@@ -14,7 +18,7 @@ Internals - basic health infomation
 Bio - Trivia Info about Player
 	Internals
 	Name Number 
-	ID			//to do
+	ID			
 	Injury Status			//to do
 	College
 
@@ -49,7 +53,7 @@ private:
 	int years_pro;
 };
 
-class bio {												//Player's Health Information
+class bio {												//Player's Health and Basic Information
 public:
 
 	bio(const char * fname = "NULL", const char * lname = "NULL", unsigned const int num = -1, unsigned const int hgt = -1, unsigned const int wgt = -1, unsigned const int player_age = -1, unsigned const int years = -1, const char * cllge = "NULL") :
@@ -59,6 +63,7 @@ public:
 		college(cllge)
 	{
 		set_internals(hgt, wgt, player_age, years);
+		set_ID(fname, lname, num);
 	};
 
 	//setters
@@ -78,7 +83,9 @@ public:
 	const char * get_first_name();
 	const char * get_last_name();
 	int get_number();
-	const char * get_ID();
+	std::string get_ID() {
+		return ID;
+	};
 	internals * get_internals();
 	const char * get_college();
  
@@ -89,7 +96,7 @@ public:
 private:
 	const char * first_name;
 	const char * last_name;
-	const char * ID;
+	std::string ID;
 	int number;
 	
 	internals * player = new internals;

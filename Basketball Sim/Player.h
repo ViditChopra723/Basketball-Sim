@@ -49,6 +49,7 @@ Player:
 
 #include <iostream>
 #include "PlayerBio.h"
+#include "PlayerStats.h"
 
 using namespace std;
 
@@ -57,13 +58,14 @@ class Player {
 public:
 	Player(const char * fname = "NULL", const char * lname = "NULL" , int num = -1, int hgt = -1, int wgt = -1, int playerAge = -1, int years = -1, const char * cllge = "NULL");
 	void print() {
-		this_player.print_bio();
+		this_player_bio.print_bio();
+		this_player_stats.print_stats();
 	}
 	~Player();
 
 private:
-	bio this_player;					//Health Info
-	//stats
+	bio this_player_bio;					//Health Info
+	stats this_player_stats; //stats
 	//ability
 	//offense
 	//defense
