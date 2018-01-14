@@ -1,8 +1,12 @@
 #ifndef PLAYERBIO_H
 #define PLAYERBIO_H
 
-#include <string>
 #include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <string>
+#include <sstream>
+#include <cstdlib>
 
 using namespace std;
 /*
@@ -56,16 +60,49 @@ private:
 class bio {												//Player's Health and Basic Information
 public:
 
-	bio(const char * fname = "NULL", const char * lname = "NULL", unsigned const int num = -1, unsigned const int hgt = -1, unsigned const int wgt = -1, unsigned const int player_age = -1, unsigned const int years = -1, const char * cllge = "NULL") :
+	bio(const char * ID = "NULL", const char * fname = "NULL", const char * lname = "NULL", unsigned const int num = -1, unsigned const int hgt = -1, unsigned const int wgt = -1, unsigned const int player_age = -1, unsigned const int years = -1, const char * cllge = "NULL", int mode = 0) :
 		first_name(fname),
 		last_name(lname),
 		number(num),
 		college(cllge)
 	{
-		set_internals(hgt, wgt, player_age, years);
-		set_ID(fname, lname, num);
-	};
-
+		if (mode == 0) {
+			set_internals(hgt, wgt, player_age, years);
+			set_ID(fname, lname, num);
+		}
+		else if (mode == 1) {
+			string end = "BIO.txt";
+			string file_name = ID + end;
+			ifstream myfile;
+			string line;
+			int n = 0;
+			myfile.open(file_name, ios::in);
+			if (myfile.is_open()) {
+				//read bio file
+				getline(myfile, line);
+				first_name = line.c_str();
+				getline(myfile, line);
+				last_name = line.c_str();
+				getline(myfile, line);
+				number = atoi(line.c_str());
+				getline(myfile, line);
+				college = line.c_str();
+				//set internals
+				getline(myfile, line);
+				int height = atoi(line.c_str());
+				getline(myfile, line);
+				int weight = atoi(line.c_str());
+				getline(myfile, line);
+				int age = atoi(line.c_str());
+				getline(myfile, line);
+				int years = atoi(line.c_str());
+				set_internals(height, weight, age, years);
+				//end file
+				myfile.close();
+			}
+			else cout << "did not open : bio file " << endl;
+		}
+	}
 	//setters
 	void set_first_name(const char * fname);
 	void set_last_name(const char * lname);
@@ -93,6 +130,25 @@ public:
 	void print_bio();
 	~bio();
 
+	//export bio to file
+	void export_bio(string file_name) {
+		//export total stats
+		ofstream myfile;
+		myfile.open(file_name);
+		if (myfile.is_open()) {
+			myfile << first_name << endl;
+			myfile << last_name << endl;
+			myfile << number << endl;
+			myfile << college << endl;
+			myfile << get_internals()->get_height() << endl;
+			myfile << get_internals()->get_weight() << endl;
+			myfile << get_internals()->get_age() << endl;
+			myfile << get_internals()->get_pro() << endl;
+
+			myfile.close();
+		}
+		else cout << "did not open " << endl;
+	}
 private:
 	const char * first_name;
 	const char * last_name;

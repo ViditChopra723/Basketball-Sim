@@ -2,6 +2,7 @@
 #define PLAYERSTATS_H
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -32,15 +33,21 @@ public:
 		}
 		else {
 			get_stats(file_name);
-			int total_games = total_array[9];
-			for (int i = 0; i < 5; i++) {
+			int total_games = total_array[10];
+
+			//calc stats
+			for (int i = 0; i < 6; i++) {
 				avg_array[i] = calc_stat(total_array[i], total_games);
+				//cout << "avg array : " << avg_array[i] << endl;
 			}
-			int j = 5;
-			for (int i = 5; i < 7; i++) {
+			int j = 6;
+			for (int i = 6; i < 8; i++) {
 				avg_array[i] = calc_stat(total_array[j], total_array[j + 1]);
+				//cout << "avg array : " << avg_array[i] << " total 1 : " << total_array[j] << " total 2 : " << total_array[j+1] << endl;
 				j += 2;
 			}
+			//end calc
+
 		}
 	};
 
@@ -52,7 +59,7 @@ public:
 		myfile.open(file_name, ios::in);
 		if (myfile.is_open()) {
 			while (getline(myfile, line)) {
-				cout << line << endl;
+				//cout << line << endl;
 				total_array[n] = atoi(line.c_str());
 				n++;
 			}
@@ -63,7 +70,7 @@ public:
 	}
 
 
-	 float calc_stat( int stat,  int compare) {
+	 float calc_stat( float stat,  float compare) {
 		 if (compare == 0) {
 			 return 0.0;
 		}
@@ -72,7 +79,7 @@ public:
 	
 	void print_stats() {
 		//print out all stats
-		cout << "Averages : " << avg_array[0] << "ppg " << avg_array[1] << "apg " << avg_array[2] << "rpg " << avg_array[3] << "spg " << avg_array[4] << "bpg " << avg_array[5] << "tovpg " << avg_array[6] << "fg% " << avg_array[7] << "3p% " << total_array[num_total] << "games played" << endl;
+		cout << fixed << setprecision(2) << "Averages : " << avg_array[0] << "ppg " << avg_array[1] << "apg " << avg_array[2] << "rpg " << avg_array[3] << "spg " << avg_array[4] << "bpg " << avg_array[5] << "tovpg " << avg_array[6]* 100 << "fg% " << avg_array[7]* 100 << "3p% " << total_array[10] << "games played" << endl;
 	}
 
 	void export_stats(string file_name) {
@@ -80,18 +87,20 @@ public:
 		ofstream myfile;
 		myfile.open(file_name);
 		if (myfile.is_open()) {
-			for (int i = 0; i < 9; i++) {
-				myfile << total_array[i] + 1 << endl;
+			for (int i = 0; i < 11; i++) {
+				//cout << " export : "<< total_array[i] << endl;
+				myfile << total_array[i] << endl;
 			}
 			myfile.close();
 		}
+		else cout << "did not open " << endl;
 		
 	}
 
 
 	~stats() {};
 
-	int total_array [13];
+	float total_array [13];
 	int num_total = 0;
 	float avg_array[9];
 	int num_avg = 8;

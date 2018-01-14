@@ -56,16 +56,21 @@ using namespace std;
 
 class Player {
 public:
-	Player(const char * fname = "NULL", const char * lname = "NULL" , int num = -1, int hgt = -1, int wgt = -1, int playerAge = -1, int years = -1, const char * cllge = "NULL");
+	Player(const char * ID = "NULL", const char * fname = "NULL", const char * lname = "NULL" , int num = -1, int hgt = -1, int wgt = -1, int playerAge = -1, int years = -1, const char * cllge = "NULL", int mode = 0);
 	void print() {
 		this_player_bio.print_bio();
 		this_player_stats.print_stats();
+	}
+	void export_player() {
+		this_player_stats.export_stats(this_player_bio.get_ID() + ".txt");
+		this_player_bio.export_bio(this_player_bio.get_ID() + "BIO.txt");
 	}
 	~Player();
 
 private:
 	bio this_player_bio;					//Health Info
-	stats this_player_stats; //stats
+	stats this_player_stats;				//stats
+	
 	//ability
 	//offense
 	//defense
