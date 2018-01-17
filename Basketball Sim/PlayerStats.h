@@ -38,12 +38,10 @@ public:
 			//calc stats
 			for (int i = 0; i < 6; i++) {
 				avg_array[i] = calc_stat(total_array[i], total_games);
-				//cout << "avg array : " << avg_array[i] << endl;
 			}
 			int j = 6;
 			for (int i = 6; i < 8; i++) {
 				avg_array[i] = calc_stat(total_array[j], total_array[j + 1]);
-				//cout << "avg array : " << avg_array[i] << " total 1 : " << total_array[j] << " total 2 : " << total_array[j+1] << endl;
 				j += 2;
 			}
 			//end calc
@@ -59,7 +57,6 @@ public:
 		myfile.open(file_name, ios::in);
 		if (myfile.is_open()) {
 			while (getline(myfile, line)) {
-				//cout << line << endl;
 				total_array[n] = atoi(line.c_str());
 				n++;
 			}
@@ -88,7 +85,6 @@ public:
 		myfile.open(file_name);
 		if (myfile.is_open()) {
 			for (int i = 0; i < 11; i++) {
-				//cout << " export : "<< total_array[i] << endl;
 				myfile << total_array[i] << endl;
 			}
 			myfile.close();

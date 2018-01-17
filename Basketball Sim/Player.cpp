@@ -2,9 +2,9 @@
 
 
 
-Player::Player(const char * ID, const char * fname, const char * lname, int num, int hgt, int wgt, int playerAge, int years,const char * cllge, int mode) {
+Player::Player(const char * fname, const char * lname, int num, int hgt, int wgt, int playerAge, int years,const char * cllge, int mode) {
 	//set bio
-	bio temp(ID, fname, lname, num, hgt, wgt, playerAge, years, cllge, mode);
+	bio temp(fname, lname, num, hgt, wgt, playerAge, years, cllge, mode);
 	this_player_bio = temp;
 	//set stats
 	stats temp1(this_player_bio.get_ID());
