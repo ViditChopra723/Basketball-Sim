@@ -32,7 +32,7 @@ input
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "Player.h"
+#include "Player/Player.h"
 
 using namespace std;
 

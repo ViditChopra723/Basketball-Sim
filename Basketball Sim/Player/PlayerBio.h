@@ -113,7 +113,6 @@ public:
 
 	//export bio to file
 	void export_bio(string file_name) {
-		//export total stats
 		ofstream myfile;
 		myfile.open(file_name);
 		if (myfile.is_open()) {

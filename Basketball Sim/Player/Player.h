@@ -51,7 +51,7 @@ Player:
 #include <string>
 #include "PlayerBio.h"
 #include "PlayerStats.h"
-#include "PlayerOffense.h"\
+#include "PlayerOffense.h"
 
 using namespace std;
 
