@@ -39,8 +39,8 @@ using namespace std;
 int main() {
 	int input = 0;
 	
-	Player temp( "Vidit", "Chopra", 7, 70, 170, 21, 7, "CSUF", 1);
-	Player temp1( "Lebron", "James", 23, 80, 240, 32, 15, "High School", 1);
+	Player temp( "Vidit", "Chopra", 7, 1);
+	Player temp1( "Lebron", "James", 23, 1);
 	cout << "Welcome to Vidit's Basketball Sim " << endl;
 	 do {
 		temp.print();

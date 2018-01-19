@@ -48,32 +48,38 @@ Player:
 #define PLAYER_H
 
 #include <iostream>
+#include <string>
 #include "PlayerBio.h"
 #include "PlayerStats.h"
+#include "PlayerOffense.h"\
 
 using namespace std;
 
 
 class Player {
 public:
-	Player(const char * fname = "NULL", const char * lname = "NULL" , int num = -1, int hgt = -1, int wgt = -1, int playerAge = -1, int years = -1, const char * cllge = "NULL", int mode = 0);
+	Player(const char * fname = "NULL", const char * lname = "NULL" , int num = -1,  int mode = 0);
 	void print() {
 		this_player_bio.print_bio();
 		this_player_stats.print_stats();
+		cout << "\n ATTRIBUTES \n " << endl;
+		this_player_off.print();
 	}
 
 	void export_player() {
-		this_player_stats.export_stats(this_player_bio.get_ID() + ".txt");
-		this_player_bio.export_bio(this_player_bio.get_ID() + "BIO.txt");
+		this_player_stats.export_stats(ID + "STATS");
+		this_player_bio.export_bio(ID + "BIO");
+		this_player_off.export_off(ID);
 	}
+
 	~Player();
 
 private:
 	bio this_player_bio;					//Health Info
 	stats this_player_stats;				//stats
-	
+	string ID;
 	//ability
-	//offense
+	offense this_player_off; //offense
 	//defense
 
 };

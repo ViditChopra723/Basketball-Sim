@@ -35,5 +35,11 @@
     <ClInclude Include="PlayerBio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ability.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerOffense.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

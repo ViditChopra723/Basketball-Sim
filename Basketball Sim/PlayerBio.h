@@ -59,20 +59,10 @@ private:
 
 class bio {												//Player's Health and Basic Information
 public:
-	bio(const char * fname = "NULL", const char * lname = "NULL", unsigned const int num = -1, unsigned const int hgt = -1, unsigned const int wgt = -1, unsigned const int player_age = -1, unsigned const int years = -1, const char * cllge = "NULL", int mode = 0) :
-		first_name(fname),
-		last_name(lname),
-		number(num),
-		college(cllge)
+	bio(string ID = "NULL") 
+		
 	{
-		if (mode == 0) {
-			set_internals(hgt, wgt, player_age, years);
-			set_ID(fname, lname, num);
-		}
-		else if (mode == 1) {
-			set_ID(fname, lname, number);
-			string end = "BIO.txt";
-			string file_name = get_ID() + "BIO.txt";
+			string file_name = ID + "BIO.txt";
 			ifstream myfile;
 			string line;
 			int n = 0;
@@ -80,13 +70,14 @@ public:
 			if (myfile.is_open()) {
 				//read bio file
 				getline(myfile, line);
-				set_first_name(line.c_str());
+				first_name = line;
+				//set_first_name(line.c_str());
 				getline(myfile, line);
-				set_last_name(line.c_str());
+				last_name = line;
 				getline(myfile, line);
-				set_number(atoi(line.c_str()));
+				number = atoi(line.c_str());
 				getline(myfile, line);
-				set_college(line.c_str());
+				college = line;
 				//set internals
 				getline(myfile, line);
 				int height = atoi(line.c_str());
@@ -100,31 +91,21 @@ public:
 				//end file
 				myfile.close();
 			}
-			else cout << "did not open : bio file " << get_ID() << endl;
-		}
+			else cout << "did not open : bio file " << ID << endl;
 	}
 	//setters
-	void set_first_name(const char * fname);
-	void set_last_name(const char * lname);
-	void set_number(int num);
-	void set_ID(const char * fname, const char * lname, int number);
 	void set_internals(int hgt, int wgt, int player_age, int years) {
 		player->set_height(hgt);
 		player->set_weight(wgt);
 		player->set_age(player_age);
 		player->set_years_pro(years);
 	}
-	void set_college(const char * cllge);
-
 	//getters
-	const char * get_first_name();
-	const char * get_last_name();
+	string get_first_name();
+	string get_last_name();
 	int get_number();
-	std::string get_ID() {
-		return ID;
-	};
 	internals * get_internals();
-	const char * get_college();
+	string get_college();
  
 	//print bio
 	void print_bio();
@@ -150,14 +131,13 @@ public:
 		else cout << "did not open " << endl;
 	}
 private:
-	const char * first_name;
-	const char * last_name;
-	std::string ID;
+	string first_name;
+	string last_name;
 	int number;
 	
 	internals * player = new internals;
 
-	const char * college;
+	string college;
 
 };
 

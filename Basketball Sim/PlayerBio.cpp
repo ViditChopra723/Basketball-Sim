@@ -6,35 +6,11 @@
 using namespace std;
 
 
-void bio::set_first_name(const char * fname) {
-	first_name = fname;
-}
 
-void bio::set_last_name(const char * lname) {
-	last_name = lname;
-}
-
-void bio::set_number(int num) {
-	number = num;
-}
-
-void bio::set_ID(const char * fname,const char * lname, int number) {
-	
-	string first = fname;
-	string last = lname;
-	ID = first + last + to_string(number);
-
-}
-
-void bio::set_college(const char * cllge) {
-	college = cllge;
-}
-
-
-const char * bio::get_first_name() {
+string bio::get_first_name() {
 		return first_name;
 	}
-const char * bio::get_last_name() {
+string bio::get_last_name() {
 		return last_name;
 	}
 int bio::get_number() {
@@ -43,7 +19,7 @@ int bio::get_number() {
 internals * bio::get_internals() {
 	return player;
 }
-const char * bio::get_college() {
+string bio::get_college() {
 	return college;
 }
 

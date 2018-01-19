@@ -26,7 +26,7 @@ public:
 	stats(string ID = "NULL") {
 		string file_name;
 		file_name = ID;
-		file_name += ".txt";
+		file_name += "STATS.txt";
 
 		if (file_name == "NULL.txt") {
 			return;
