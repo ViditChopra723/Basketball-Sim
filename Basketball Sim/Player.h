@@ -67,8 +67,8 @@ public:
 	}
 
 	void export_player() {
-		this_player_stats.export_stats(ID + "STATS");
-		this_player_bio.export_bio(ID + "BIO");
+		this_player_stats.export_stats("assets/" + ID + "/" + ID + "STATS");
+		this_player_bio.export_bio("assets/" + ID + "/" + ID + "BIO");
 		this_player_off.export_off(ID);
 	}
 

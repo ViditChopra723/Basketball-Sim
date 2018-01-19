@@ -25,7 +25,7 @@ class stats {
 public:
 	stats(string ID = "NULL") {
 		string file_name;
-		file_name = ID;
+		file_name = "assets/" + ID + "/" + ID;
 		file_name += "STATS.txt";
 
 		if (file_name == "NULL.txt") {

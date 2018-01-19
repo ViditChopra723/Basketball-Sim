@@ -51,8 +51,7 @@ class offense {
 public:
 	offense(string ID = "NULL" ) {
 
-		string end = "OFF.txt";
-		string file_name = ID + "OFF.txt";
+		string file_name = "assets/" + ID + "/" + ID + "OFF.txt";
 		ifstream myfile;
 		string line;
 		int n = 0;
@@ -109,7 +108,7 @@ public:
 	void export_off(string ID) {
 		//export offensive attributes
 		ofstream myfile;
-		myfile.open(ID + "OFF.txt");
+		myfile.open("assets/" + ID + "/" + ID + "OFF.txt");
 		if (myfile.is_open()) {
 			myfile << get_scoring().layup << endl;
 			myfile << get_scoring().midrange << endl;

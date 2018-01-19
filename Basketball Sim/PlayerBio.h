@@ -62,7 +62,7 @@ public:
 	bio(string ID = "NULL") 
 		
 	{
-			string file_name = ID + "BIO.txt";
+			string file_name = "assets/" + ID + "/" + ID + "BIO.txt";
 			ifstream myfile;
 			string line;
 			int n = 0;
