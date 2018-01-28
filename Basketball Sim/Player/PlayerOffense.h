@@ -3,7 +3,7 @@ Player's Offense Rating
 
 if this player's rating in category is higher than defender's during action they will succeed 
 
-e.g. Lebron goes for layup with a 99 rating versus Tim Duncan who has a block rating of 97. Lebron will score. 
+e.g. Lebron goes for layup with a 99 rating versus Tim Duncan who has a rim protection rating of 97. Lebron will score. 
 
 
 scoring
@@ -27,12 +27,8 @@ athletics
 #define PLAYEROFFENSE_H
 
 
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <fstream>
+#include "../Includes.h"
 
-using namespace std;
 
 //scoring attributes
 struct scoring {

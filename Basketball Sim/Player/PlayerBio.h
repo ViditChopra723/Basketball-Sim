@@ -1,12 +1,10 @@
 #ifndef PLAYERBIO_H
 #define PLAYERBIO_H
 
-#include <iostream>
-#include <fstream>
-#include <iomanip>
+#include "../Includes.h"
 #include <string>
+#include <fstream>
 #include <sstream>
-#include <cstdlib>
 
 using namespace std;
 /*

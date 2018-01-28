@@ -1,13 +1,8 @@
 #ifndef PLAYERSTATS_H
 #define PLAYERSTATS_H
 
-#include <iostream>
+#include "../Includes.h"
 #include <iomanip>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <cstdlib>
-using namespace std;
 
 /*
 stats    ----> saved in file after every game

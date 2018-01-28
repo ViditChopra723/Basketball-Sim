@@ -123,8 +123,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ability.h" />
+    <ClInclude Include="Includes.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBio.h" />
+    <ClInclude Include="PlayerDefense.h" />
     <ClInclude Include="PlayerOffense.h" />
     <ClInclude Include="PlayerStats.h" />
   </ItemGroup>

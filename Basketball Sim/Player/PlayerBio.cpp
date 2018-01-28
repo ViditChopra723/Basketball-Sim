@@ -1,9 +1,5 @@
-#include "PlayerBio.h"
-#include <iostream>
-#include <string>
-#include <array>
+#include "../Includes.h"
 
-using namespace std;
 
 
 

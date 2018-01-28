@@ -47,13 +47,8 @@ Player:
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <iostream>
-#include <string>
-#include "PlayerBio.h"
-#include "PlayerStats.h"
-#include "PlayerOffense.h"
+#include "../Includes.h"
 
-using namespace std;
 
 
 class Player {
@@ -64,12 +59,14 @@ public:
 		this_player_stats.print_stats();
 		cout << "\n ATTRIBUTES \n " << endl;
 		this_player_off.print();
+		this_player_def.print();
 	}
 
 	void export_player() {
 		this_player_stats.export_stats("assets/" + ID + "/" + ID + "STATS");
 		this_player_bio.export_bio("assets/" + ID + "/" + ID + "BIO");
 		this_player_off.export_off(ID);
+		this_player_def.export_def(ID);
 	}
 
 	~Player();
@@ -80,8 +77,7 @@ private:
 	string ID;
 	//ability
 	offense this_player_off; //offense
-	//defense
-
+	defense this_player_def; // defense
 };
 
 

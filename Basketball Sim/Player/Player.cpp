@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "../Includes.h"
 
 
 
@@ -17,6 +17,10 @@ Player::Player(const char * fname, const char * lname, int num, int mode) {
 	//set offense
 	offense temp2(ID);
 	this_player_off = temp2;
+	//set defense 
+	defense temp3(ID);
+	this_player_def = temp3;
+
 }
 
 Player::~Player() {

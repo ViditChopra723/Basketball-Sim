@@ -29,12 +29,8 @@ input
 
 
 
-#include <iostream>
-#include <string>
-#include <stdlib.h>
-#include "Player/Player.h"
+#include "../Includes.h"
 
-using namespace std;
 
 int main() {
 	int input = 0;
@@ -44,10 +40,12 @@ int main() {
 	cout << "Welcome to Vidit's Basketball Sim " << endl;
 	 do {
 		temp.print();
-		
+
 		temp1.print();
+
 		cout << "input" << endl;
 		cin >> input;
+
 	 } while (input != -1);
 	temp.export_player();
 	temp1.export_player();
