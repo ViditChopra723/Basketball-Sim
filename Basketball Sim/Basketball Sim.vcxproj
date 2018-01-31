@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{BBECCB92-A554-4102-B599-B6C0257FB0CF}</ProjectGuid>
     <RootNamespace>BasketballSim</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <ProjectName>
     </ProjectName>
   </PropertyGroup>
@@ -118,17 +118,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Player\ability.cpp" />
     <ClCompile Include="Player\Player.cpp" />
     <ClCompile Include="Player\PlayerBio.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ability.h" />
     <ClInclude Include="Includes.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="PlayerBio.h" />
-    <ClInclude Include="PlayerDefense.h" />
-    <ClInclude Include="PlayerOffense.h" />
-    <ClInclude Include="PlayerStats.h" />
+    <ClInclude Include="Player\ability.h" />
+    <ClInclude Include="Player\Player.h" />
+    <ClInclude Include="Player\PlayerBio.h" />
+    <ClInclude Include="Player\PlayerDefense.h" />
+    <ClInclude Include="Player\PlayerOffense.h" />
+    <ClInclude Include="Player\PlayerStats.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
