@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{BBECCB92-A554-4102-B599-B6C0257FB0CF}</ProjectGuid>
     <RootNamespace>BasketballSim</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <ProjectName>
     </ProjectName>
   </PropertyGroup>
